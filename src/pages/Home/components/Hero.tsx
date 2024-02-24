@@ -1,6 +1,6 @@
 import { IMovie } from '../../../types';
 import { Swiper, SwiperSlide } from 'swiper/react';
-// import { Autoplay } from 'swiper/modules';
+import { Autoplay } from 'swiper/modules';
 import { HeroSlide } from './HeroSlide';
 const Hero = ({ movies }: { movies: IMovie[] }) => (
 	<Swiper
@@ -11,7 +11,7 @@ const Hero = ({ movies }: { movies: IMovie[] }) => (
 			delay: 10000,
 			disableOnInteraction: false,
 		}}
-		// modules={[Autoplay]}
+		modules={[Autoplay]}
 	>
 		{movies.map((movie) => {
 			return (

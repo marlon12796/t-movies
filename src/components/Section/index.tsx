@@ -21,7 +21,6 @@ export const Section = memo(({ title, category, className, type, id, showSimilar
 	const [isInView, setIsInView] = useState<boolean>(false);
 	const ref = useRef<HTMLElement | null>(null);
 	const { theme } = useTheme();
-	console.log(theme);
 
 	const {
 		data = { results: [] },
