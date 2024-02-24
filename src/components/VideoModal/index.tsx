@@ -73,6 +73,7 @@ const VideoModal = () => {
 							height='100%'
 							className='rounded-md'
 							allowFullScreen
+							loading='lazy'
 						/>
 					</m.div>
 				</Overlay>
