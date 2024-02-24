@@ -4,12 +4,14 @@ import ScrollToTop from './components/ScrollToTop';
 import { Loader } from './components/Loader';
 import { Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer';
+import SideBar from './components/SideBar';
 
 const Home = lazy(() => import('./pages/Home'));
 const NotFound = lazy(() => import('./pages/NotFound'));
 function App() {
 	return (
 		<>
+			<SideBar />
 			<Header />
 			<main className='dark:bg-black bg-mainColor lg:pb-14 md:pb-4 sm:pb-2 xs:pb-1 pb-0'>
 				<ScrollToTop>
