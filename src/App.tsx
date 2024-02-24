@@ -8,6 +8,7 @@ import SideBar from './components/SideBar';
 
 const Home = lazy(() => import('./pages/Home'));
 const NotFound = lazy(() => import('./pages/NotFound'));
+const Catalog = lazy(() => import('./pages/Catalog'));
 function App() {
 	return (
 		<>
@@ -18,6 +19,7 @@ function App() {
 					<Suspense fallback={<Loader />}>
 						<Routes>
 							<Route path='/' element={<Home />} />
+							<Route path='/:category' element={<Catalog />} />
 							<Route path='*' element={<NotFound />} />
 						</Routes>
 					</Suspense>
