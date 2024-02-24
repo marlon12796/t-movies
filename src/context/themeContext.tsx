@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, createContext } from 'react';
 import { getTheme, saveTheme } from '../utils/helper';
-
+export type Theme = 'Light' | 'Dark' | 'System';
 interface ThemeContextType {
 	showThemeOptions: boolean;
 	setShowThemeOptions: (show: boolean) => void;
@@ -8,7 +8,7 @@ interface ThemeContextType {
 	closeMenu: () => void;
 	setTheme: (newTheme: 'Dark' | 'Light') => void;
 	checkSystemTheme: () => void;
-	theme: string;
+	theme: Theme;
 }
 
 export const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
@@ -19,7 +19,7 @@ interface ThemeProviderProps {
 
 const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
 	const [showThemeOptions, setShowThemeOptions] = useState<boolean>(false);
-	const [theme, setTheme] = useState<string>(getTheme() || '');
+	const [theme, setTheme] = useState<Theme>(getTheme() ?? 'System');
 
 	const checkSystemTheme = useCallback(() => {
 		const systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'Dark' : 'Light';

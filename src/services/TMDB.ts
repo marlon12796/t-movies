@@ -23,13 +23,9 @@ export const tmdbApi = createApi({
 				showSimilarShows?: boolean;
 				id?: number;
 			}) => {
-				if (searchQuery) {
-					return `search/${category}?api_key=${API_KEY}&query=${searchQuery}&page=${page}`;
-				}
+				if (searchQuery) return `search/${category}?api_key=${API_KEY}&query=${searchQuery}&page=${page}`;
 
-				if (showSimilarShows) {
-					return `${category}/${id}/similar?api_key=${API_KEY}`;
-				}
+				if (showSimilarShows) return `${category}/${id}/similar?api_key=${API_KEY}`;
 
 				return `${category}/${type}?api_key=${API_KEY}&page=${page}`;
 			},
