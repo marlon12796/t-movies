@@ -28,13 +28,13 @@ const SideBar: React.FC = () => {
 			{showSidebar && (
 				<Overlay>
 					<m.nav
-						variants={slideIn('right', 'tween', 0, 0.3)}
+						variants={slideIn('right', 0.5, 0)}
 						initial='hidden'
 						animate='show'
 						exit='hidden'
 						ref={ref}
 						className={cn(
-							`fixed top-0 right-0 sm:w-[40%] xs:w-[220px] w-[195px] h-full z-[25] overflow-y-auto shadow-md md:hidden p-4 pb-0 dark:text-gray-200 text-gray-600`,
+							`fixed top-0 right-0 sm:w-[40%] xs:w-[220px] w-[195px] h-full z-[25] overflow-y-hidden shadow-md md:hidden p-4 pb-0 dark:text-gray-200 text-gray-600`,
 							theme === 'Dark' ? 'dark-glass' : 'light-glass'
 						)}
 					>

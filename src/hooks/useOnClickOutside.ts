@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 
-export const useOnClickOutside = <T extends HTMLUListElement>(action: () => void, listenCapturing = true) => {
+export const useOnClickOutside = <T extends HTMLElement>(action: () => void, listenCapturing = true) => {
 	const ref = useRef<T | null>(null);
 
 	useEffect(() => {

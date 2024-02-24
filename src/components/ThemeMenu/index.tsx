@@ -10,7 +10,7 @@ const ThemeMenu = () => {
 	const { theme, setTheme, checkSystemTheme, setShowThemeOptions, closeMenu } = useTheme();
 	const { zoomIn } = useMotion();
 
-	const { ref } = useOnClickOutside(closeMenu);
+	const { ref } = useOnClickOutside<HTMLUListElement>(closeMenu);
 
 	const changeTheme = (theme: Theme) => {
 		theme === 'System' ? checkSystemTheme() : setTheme(theme);
