@@ -8,8 +8,8 @@ import { mainHeading, maxWidth, paragraph } from '../../styles';
 import { useGetShowQuery } from '../../services/TMDB';
 import { Poster } from '../../components/Poster';
 import { Loader } from '../../components/Loader';
-import Error from '../../components/Error';
 import { Section } from '../../components/Section';
+import NotFound from '../NotFound';
 
 const Detail = () => {
 	const { category, id } = useParams();
@@ -33,7 +33,7 @@ const Detail = () => {
 		};
 	}, [movie?.title, isLoading, movie?.name]);
 	if (isLoading || isFetching) return <Loader />;
-	if (isError) return <Error error='Something went wrong!' />;
+	if (isError) return <NotFound />;
 	const toggleShow = () => setShow((show) => !show);
 	const { poster_path: posterPath, title, overview, name, genres, videos, credits } = movie;
 	const backgroundStyle = {

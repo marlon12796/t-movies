@@ -9,9 +9,9 @@ import { Section } from '../../components/Section';
 
 const Home = () => {
 	const { data, isLoading, isError } = useGetShowsQuery({
-		category: 'tv',
+		category: 'movie',
 		type: 'top_rated',
-		page: 1,
+		page: 2,
 	});
 	if (isLoading) return <Loader />;
 

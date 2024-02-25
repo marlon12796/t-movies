@@ -3,7 +3,7 @@ import img from '../../assets/svg/not-found.svg';
 
 const NotFound = () => {
 	return (
-		<div className='w-screen h-screen flex flex-col gap-4 items-center justify-center dark:bg-black bg-mainColor'>
+		<div className='w-screen h-screen flex flex-col gap-4 items-center justify-center dark:bg-black bg-[#cdcdcd]'>
 			<div className='flex flex-col gap-1 items-center font-robotoCondensed'>
 				<img src={img} alt='not found' className='lg:max-h-[370px] xs:max-h-[270px] max-h-[180px] w-full' />
 				<h3 className='sm:text-2xl xs:text-xl text-lg mt-2 dark:text-gray-50 text-gray-900 font-medium'>
