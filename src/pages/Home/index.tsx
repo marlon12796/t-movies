@@ -9,19 +9,15 @@ import { Section } from '../../components/Section';
 
 const Home = () => {
 	const { data, isLoading, isError } = useGetShowsQuery({
-		category: 'movie',
-		type: 'popular',
+		category: 'tv',
+		type: 'top_rated',
 		page: 1,
 	});
-	if (isLoading) {
-		return <Loader />;
-	}
+	if (isLoading) return <Loader />;
 
-	if (isError) {
-		return <Error error='Unable to fetch the movies! ' />;
-	}
+	if (isError) return <Error error='Unable to fetch the movies! ' />;
 
-	const popularMovies = data?.results.slice(0, 5);
+	const popularMovies = data?.results.slice(0, 7);
 	return (
 		<>
 			<Hero movies={popularMovies} />

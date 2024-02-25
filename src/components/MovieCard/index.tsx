@@ -1,7 +1,7 @@
 import { memo } from 'react';
 import { Link } from 'react-router-dom';
 import { FaYoutube } from 'react-icons/fa';
-
+import MovieCardNotFound from '../../assets/images/movieNotFound.jpg';
 import Image from '../Image';
 import { useMediaQuery } from 'usehooks-ts';
 import { IMovie } from '../../types';
@@ -13,15 +13,15 @@ const MovieCard = ({ movie, category }: { movie: IMovie; category: string }) => 
 		<>
 			<Link
 				to={`/${category}/${id}`}
-				className='dark:bg-[#1f1f1f] bg-[#f5f5f5] rounded-lg relative group w-[170px] select-none xs:h-[250px] h-[216px] overflow-hidden'
+				className='dark:bg-[#1f1f1f] bg-[#f5f5f5] rounded-lg relative group w-[170px] select-none xs:h-[250px] h-[216px] overflow-hidden block'
 			>
 				<Image
 					height={!isMobile ? 250 : 216}
 					width={170}
-					src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+					src={poster_path === null ? MovieCardNotFound : `https://image.tmdb.org/t/p/w500/${poster_path}`}
 					alt={movie.original_title}
 					className=' object-cover rounded-lg drop-shadow-md shadow-md group-hover:shadow-none group-hover:drop-shadow-none transition-all duration-300 ease-in-out
-          zoomInEffect'
+          zoomInEffect h-full'
 				/>
 
 				<div className='absolute top-0 left-0 w-[170px]  h-full group-hover:opacity-100 opacity-0 bg-[rgba(0,0,0,0.6)] transition-all duration-300 rounded-lg flex items-center justify-center'>

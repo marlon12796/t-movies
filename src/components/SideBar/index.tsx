@@ -45,11 +45,9 @@ const SideBar: React.FC = () => {
 						<div className='p-4 sm:pt-8  xs:pt-6 pt-[22px] h-full flex flex-col'>
 							<h3 className={sideBarHeading}>Menu</h3>
 							<ul className='flex flex-col sm:gap-2 xs:gap-[6px] gap-1 capitalize xs:text-[14px] text-[13.5px] font-medium'>
-								{navLinks.map((link: INavLink) => {
-									return (
-										<SidebarNavItem link={link} closeSideBar={closeSideBar} key={link.title.replaceAll(' ', '')} />
-									);
-								})}
+								{navLinks.map((link: INavLink) => (
+									<SidebarNavItem link={link} closeSideBar={closeSideBar} key={link.title.replaceAll(' ', '')} />
+								))}
 							</ul>
 
 							<h3 className={cn(`mt-4 `, sideBarHeading)}>Theme</h3>
