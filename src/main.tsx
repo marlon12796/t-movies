@@ -12,7 +12,7 @@ import { ApiProvider } from '@reduxjs/toolkit/dist/query/react/index';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
 	<React.StrictMode>
-		<BrowserRouter basename='/t-movies/'>
+		<BrowserRouter basename='/t-movies'>
 			<ApiProvider api={tmdbApi}>
 				<ThemeProvider>
 					<GlobalContextProvider>

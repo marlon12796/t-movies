@@ -21,7 +21,7 @@ function App() {
 				<ScrollToTop>
 					<Suspense fallback={<Loader />}>
 						<Routes>
-							<Route path='' element={<Home />} />
+							<Route path='/' element={<Home />} />
 							<Route path='/:category' element={<Catalog />} />
 							<Route path='/:category/:id' element={<Detail />} />
 							<Route path='*' element={<NotFound />} />

@@ -20,6 +20,7 @@ const Detail = () => {
 		data: movie,
 		isLoading,
 		isFetching,
+
 		isError,
 	} = useGetShowQuery({
 		category: String(category),
@@ -41,6 +42,7 @@ const Detail = () => {
 		backgroundPosition: 'top',
 		backgroundSize: 'cover',
 	};
+
 	return (
 		<>
 			<section className='w-full' style={backgroundStyle}>
