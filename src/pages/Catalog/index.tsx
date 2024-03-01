@@ -7,6 +7,7 @@ import { useGetShowsQuery } from '../../services/TMDB';
 import { SkelatonLoader } from '../../components/Loader';
 import { smallMaxWidth } from '../../styles';
 import MovieCard from '../../components/MovieCard';
+import NotFound from '../NotFound';
 const Catalog = () => {
 	const [page, setPage] = useState(1);
 	const [shows, setShows] = useState<IMovie[]>([]);
@@ -17,7 +18,7 @@ const Catalog = () => {
 	const type = query.get('type') ?? 'popular';
 	const searchQuery = query.get('search') ?? '';
 
-	const { data, isLoading, isFetching } = useGetShowsQuery({
+	const { data, isLoading, isError, isFetching } = useGetShowsQuery({
 		category,
 		page,
 		searchQuery,
@@ -41,6 +42,9 @@ const Catalog = () => {
 			}
 		}
 	}, [data, isFetching, isLoading, page]);
+	if (isError) {
+		return <NotFound></NotFound>;
+	}
 
 	return (
 		<>
