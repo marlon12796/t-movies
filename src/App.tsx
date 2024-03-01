@@ -17,11 +17,11 @@ function App() {
 			<VideoModal />
 			<SideBar />
 			<Header />
-			<main className='dark:bg-black bg-mainColor 	'>
+			<main className='dark:bg-black bg-mainColor'>
 				<ScrollToTop>
 					<Suspense fallback={<Loader />}>
 						<Routes>
-							<Route path='/' element={<Home />} />
+							<Route path='' element={<Home />} />
 							<Route path='/:category' element={<Catalog />} />
 							<Route path='/:category/:id' element={<Detail />} />
 							<Route path='*' element={<NotFound />} />
