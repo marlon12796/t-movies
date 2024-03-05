@@ -42,13 +42,11 @@ const Catalog = () => {
 			}
 		}
 	}, [data, isFetching, isLoading, page]);
-	if (isError) {
-		return <NotFound></NotFound>;
-	}
+	if (isError) return <NotFound />;
 
 	return (
 		<>
-			{!isLoading || !isFetching ? (
+			{!isLoading && !isFetching ? (
 				<>
 					<CatalogHeader category={String(category)} />
 					<section className={`${smallMaxWidth} `}>
@@ -69,7 +67,7 @@ const Catalog = () => {
 							</div>
 						)}
 
-						{!isCategoryChanged ? (
+						{isCategoryChanged ? (
 							<SkelatonLoader isMoviesSliderLoader={false} className='md:pt-8 sm:pt-7 pt-6' />
 						) : (
 							<div className='w-full flex items-center justify-center'>
